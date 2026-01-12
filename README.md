@@ -1,40 +1,191 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# http_auto
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+A lightweight Dart library that simplifies HTTP requests by automatically attaching authentication tokens and handling token refresh when they expire.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+---
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## 🚀 Features
 
-## Features
+* Simple and clean API for HTTP requests
+* Automatic attachment of access tokens
+* Built-in refresh token handling on `401 Unauthorized`
+* Supports common HTTP methods: `GET`, `POST`, `PUT`, `DELETE`
+* Designed to work smoothly with Flutter and Dart projects
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+---
 
-## Getting started
+## 📦 Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add the package to your `pubspec.yaml`:
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  http_auto: ^1.0.0
 ```
 
-## Additional information
+Then run:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
-# http_auto
+```bash
+flutter pub get
+```
+
+---
+
+## ⚙️ Initialization
+
+Before making any requests, initialize the library:
+
+```dart
+Http.init(
+  baseUrl: "https://api.example.com",
+  refreshTokenURL: "/auth/refresh-token",
+  accessToken: "YOUR_ACCESS_TOKEN",
+  refreshToken: "YOUR_REFRESH_TOKEN",
+);
+```
+
+---
+
+## 📡 Usage Examples
+
+### GET Request
+
+```dart
+final response = await Http.get(url: "/users");
+```
+
+### POST Request
+
+```dart
+final response = await Http.post(
+  url: "/login",
+  body: {
+    "email": "test@example.com",
+    "password": "123456",
+  },
+);
+```
+
+### PUT Request
+
+```dart
+final response = await Http.put(
+  url: "/profile",
+  body: {
+    "name": "Ahmed",
+  },
+);
+```
+
+### DELETE Request
+
+```dart
+final response = await Http.delete(url: "/account");
+```
+
+---
+
+## 🔐 Token Handling
+
+* The access token is automatically sent with every request
+* If a request returns `401 Unauthorized`, the library:
+
+  1. Calls the refresh token endpoint
+  2. Saves the new tokens
+  3. Retries the original request automatically
+
+---
+
+## 🧪 Testing
+
+Use the `test/` folder to write unit tests for your package logic using the `test` package.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests.
+
+---
+
+# 🇸🇦 الوصف بالعربي
+
+## http_auto
+
+مكتبة Dart خفيفة بتسهّل التعامل مع طلبات HTTP عن طريق إرسال التوكن تلقائيًا والتعامل مع انتهاء صلاحيته بشكل أوتوماتيكي.
+
+---
+
+## ✨ المميزات
+
+* واجهة بسيطة ونظيفة للتعامل مع HTTP
+* إرسال Access Token تلقائيًا مع كل طلب
+* التعامل التلقائي مع Refresh Token عند انتهاء الجلسة
+* دعم عمليات `GET` و `POST` و `PUT` و `DELETE`
+* مناسبة لمشاريع Flutter و Dart
+
+---
+
+## ⚙️ التهيئة
+
+لازم تهيّئ المكتبة قبل الاستخدام:
+
+```dart
+Http.init(
+  baseUrl: "https://api.example.com",
+  refreshTokenURL: "/auth/refresh-token",
+  accessToken: "ACCESS_TOKEN",
+  refreshToken: "REFRESH_TOKEN",
+);
+```
+
+---
+
+## 📡 أمثلة استخدام
+
+### GET
+
+```dart
+await Http.get(url: "/users");
+```
+
+### POST
+
+```dart
+await Http.post(
+  url: "/login",
+  body: {
+    "email": "test@example.com",
+    "password": "123456",
+  },
+);
+```
+
+---
+
+## 🔐 إدارة التوكن
+
+* التوكن بيتبعت تلقائي مع كل Request
+* لو السيرفر رجّع `401`:
+
+  * يتم طلب Refresh Token
+  * حفظ التوكن الجديد
+  * إعادة إرسال الطلب تلقائيًا
+
+---
+
+## 🧪 الاختبارات
+
+استخدم فولدر `test/` لكتابة اختبارات للوحدات البرمجية الخاصة بالمكتبة.
+
+---
+
+## 📄 الرخصة
+
+المشروع مرخّص تحت رخصة MIT.
