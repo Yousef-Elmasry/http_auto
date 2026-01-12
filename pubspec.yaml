@@ -1,6 +1,6 @@
 name: http_auto
 description: "Designed to reduce boilerplate code when working with authenticated APIs in Flutter and Dart applications."
-version: 0.0.1
+version: 1.0.0
 homepage:
 
 environment:
