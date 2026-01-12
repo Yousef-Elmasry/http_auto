@@ -1,7 +1,9 @@
 name: http_auto
 description: "Designed to reduce boilerplate code when working with authenticated APIs in Flutter and Dart applications."
 version: 1.0.0
-homepage:
+homepage: https://github.com/Yousef-Elmasry/http_auto
+repository: https://github.com/Yousef-Elmasry/http_auto
+issue_tracker: https://github.com/Yousef-Elmasry/http_auto/issues
 
 environment:
   sdk: ^3.10.4
