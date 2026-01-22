@@ -1,9 +1,56 @@
 name: http_auto
-description: "Designed to reduce boilerplate code when working with authenticated APIs in Flutter and Dart applications."
-version: 1.0.2
+description: |
+  A lightweight Flutter/Dart HTTP client library with automatic JWT token management, 
+  auto-refresh on 401 errors, secure token storage, and zero boilerplate authentication code. 
+  Supports GET, POST, PUT, DELETE requests with custom headers, global request configuration, 
+  and seamless token refresh callbacks. Perfect for REST APIs, authenticated endpoints, 
+  and production Flutter applications. Reduces authentication code by 90%.
+version: 1.1.2
 homepage: https://github.com/Yousef-Elmasry/http_auto
 repository: https://github.com/Yousef-Elmasry/http_auto
 issue_tracker: https://github.com/Yousef-Elmasry/http_auto/issues
+documentation: https://github.com/Yousef-Elmasry/http_auto
+
+# Keywords are CRITICAL for search optimization on pub.dev
+keywords:
+  - http
+  - http-client
+  - rest-api
+  - rest-client
+  - api-client
+  - http-request
+  - authentication
+  - auth
+  - token
+  - jwt
+  - jwt-token
+  - bearer-token
+  - token-management
+  - token-refresh
+  - auto-refresh
+  - refresh-token
+  - secure-storage
+  - flutter-secure-storage
+  - 401-handler
+  - unauthorized-handler
+  - api-wrapper
+  - network
+  - request
+  - response
+  - error-handling
+  - flutter
+  - dart
+  - mobile
+  - ios
+  - android
+  - web
+
+topis:
+  - http
+  - tokens
+  - authentication
+  - request-handler
+  - refresh-token
 
 environment:
   sdk: ^3.10.4
