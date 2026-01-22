@@ -45,12 +45,13 @@ keywords:
   - android
   - web
 
-topis:
+topics:
   - http
   - tokens
   - authentication
   - request-handler
   - refresh-token
+  - http-client
 
 environment:
   sdk: ^3.10.4

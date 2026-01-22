@@ -129,8 +129,8 @@ final response = await Http.post(
 final response = await Http.post(
   url: "/api/users",
   body: {
-    "name": "John Doe",
-    "email": "john@example.com",
+    "name": "Yousef Elmasry",
+    "email": "user@example.com",
   },
   headers: {
     "x-request-id": "unique-id",
