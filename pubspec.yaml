@@ -51,7 +51,6 @@ topics:
   - authentication
   - request-handler
   - refresh-token
-  - http-client
 
 environment:
   sdk: ^3.10.4
